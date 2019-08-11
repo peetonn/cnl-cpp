@@ -112,9 +112,9 @@ public:
   void
   setObject
     (Namespace& nameSpace, const ndn::Blob& object,
-     const std::string& contentType)
+     const std::string& contentType, const ndn::Blob& other = ndn::Blob())
   {
-    impl_->setObject(nameSpace, object, contentType);
+    impl_->setObject(nameSpace, object, contentType, other);
   }
 
   /**
@@ -210,7 +210,7 @@ private:
     void
     setObject
       (Namespace& nameSpace, const ndn::Blob& object,
-       const std::string& contentType);
+       const std::string& contentType, const ndn::Blob& other);
 
     int
     getInterestPipelineSize()
